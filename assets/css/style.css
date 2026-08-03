@@ -567,13 +567,37 @@ button { font-family: inherit; }
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
+.ba__frame { position: relative; }
 .ba__img {
+  display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border: 1px solid var(--line-soft);
   background: #3d3f43;
+}
+/* Before → After の矢印（3枚とも同じ大きさ・位置） */
+.ba__arrow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, .6);
+  background: var(--grad-gold);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .45);
+}
+.ba__arrow svg {
+  width: 30px; height: 30px;
+  margin-left: 3px;
+  fill: none;
+  stroke: #2b2209;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 .ba__caption {
   margin-top: 12px;
@@ -1315,6 +1339,8 @@ button { font-family: inherit; }
   .hbadge__text strong { font-size: 18px; }
   .hbadge__text .hbadge__big { font-size: 22px; }
   .ba-grid { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
+  .ba__arrow { width: 56px; height: 56px; }
+  .ba__arrow svg { width: 26px; height: 26px; }
   .compare { grid-template-columns: 1fr; gap: 34px; }
   .compare__vs span { width: 58px; height: 58px; font-size: 18px; }
   .flow--3 { gap: 34px; }
