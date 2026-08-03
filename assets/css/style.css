@@ -61,6 +61,9 @@ button { font-family: inherit; }
 
 .gold { color: var(--gold-lt); }
 
+/* スマホだけで効く改行 */
+.br-sp { display: none; }
+
 .sr-only {
   position: absolute; width: 1px; height: 1px;
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
@@ -1378,16 +1381,27 @@ button { font-family: inherit; }
   .form__submit { font-size: 16px; padding: 15px 40px; letter-spacing: .06em; }
   .form__submit-arrow { right: 12px; width: 26px; height: 26px; }
 
+  .br-sp { display: inline; }
+  .contact__title { font-size: clamp(19px, 5.6vw, 28px); white-space: nowrap; }
+
   .fixed-cta { grid-template-columns: 1fr 1fr; gap: 6px; padding: 6px; }
   .fixed-cta__label, .fixed-cta__sub { font-size: 10px; }
   .fixed-cta__main { font-size: 17px; gap: 5px; }
-  .fixed-cta__btn--form { gap: 8px; padding: 6px 8px; }
-  .fixed-cta__btn--form .fixed-cta__main { font-size: 12.5px; line-height: 1.3; text-align: left; }
-  .fixed-cta__mail { width: 26px; }
+  .fixed-cta__btn--form { gap: 6px; padding: 6px; }
+  .fixed-cta__btn--form .fixed-cta__main {
+    font-size: 11px;
+    line-height: 1.3;
+    letter-spacing: 0;
+    white-space: nowrap;
+    text-align: left;
+  }
+  .fixed-cta__mail { width: 20px; }
 }
 
 @media (max-width: 380px) {
   .fixed-cta__main { font-size: 15px; }
+  .fixed-cta__btn--form .fixed-cta__main { font-size: 10.5px; }
+  .fixed-cta__mail { width: 18px; }
   .free-marks li { width: 66px; height: 66px; }
   .free-marks span { font-size: 12.5px; }
 }
