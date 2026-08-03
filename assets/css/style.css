@@ -1359,8 +1359,8 @@ button { font-family: inherit; }
 
   .hero { padding-top: 66px; }
   .hero__inner { grid-template-columns: 1fr; padding: 14px 0 18px; }
-  .hero__bottle { width: 52%; margin-left: auto; margin-top: -8px; }
-  .hero__bg { object-position: 30% 20%; }
+  .hero__bottle { width: 48%; margin-left: 0; margin-right: auto; margin-top: -8px; }
+  .hero__bg { object-position: 51% center; }
   .hero__media::after {
     background:
       linear-gradient(180deg, rgba(30,31,34,.9) 0%, rgba(32,33,36,.55) 34%, rgba(26,27,30,.82) 100%);
