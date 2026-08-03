@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(run)",
+      "Bash(python3 -c \"import playwright\")",
+      "Bash(npx playwright *)",
+      "Bash(node *)",
+      "Bash(npm install *)",
+      "Bash(PLAYWRIGHT_BROWSERS_PATH=/root/.cache/ms-playwright node *)",
+      "Bash(npm root *)",
+      "Bash(NODE_PATH=/root/.local/share/fnm/node-versions/v20.20.2/installation/lib/node_modules node *)",
+      "Bash(apt-get install *)",
+      "Bash(apt-get update *)",
+      "Bash(cp \"/mnt/c/Users/perfo/Downloads/ChatGPT Image 2026年7月6日 19_06_59.png\" \"/mnt/c/Users/perfo/OneDrive/添付ファイル/App_dev/re-lp-main/assets/img/hero-worker.png\")",
+      "Bash(cp \"/mnt/c/Users/perfo/Downloads/ChatGPT Image 2026年7月6日 19_11_42.png\" \"/mnt/c/Users/perfo/OneDrive/添付ファイル/App_dev/re-lp-main/assets/img/hero-building.png\")"
+    ]
+  }
+}
