@@ -738,14 +738,20 @@ button { font-family: inherit; }
    ========================================================================== */
 .guarantee {
   display: grid;
-  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 430px) minmax(0, 1fr);
   gap: 34px;
   align-items: center;
   padding: 30px;
   border: 1px solid var(--line-soft);
   background: linear-gradient(180deg, #45474c, #393b3f);
 }
-.guarantee__img { aspect-ratio: 4 / 3; }
+
+.guarantee__img img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line-soft);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+}
 .guarantee__list { display: grid; gap: 14px; }
 .guarantee__list li {
   position: relative;
