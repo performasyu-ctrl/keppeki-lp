@@ -586,7 +586,7 @@ button { font-family: inherit; }
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
-.ba__frame { position: relative; }
+.ba__frame { position: relative; container-type: inline-size; }
 .ba__img {
   display: block;
   width: 100%;
@@ -596,6 +596,26 @@ button { font-family: inherit; }
   border: 1px solid var(--line-soft);
   background: #3d3f43;
 }
+/* Before / After のラベル（画像に焼き込まず、CSSで3枚とも同じ位置に載せる） */
+.ba__label {
+  position: absolute;
+  top: 2.4%;
+  z-index: 2;
+  padding: .26em .62em;
+  border-radius: .3em;
+  background: rgba(15, 15, 15, .9);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 20px; /* コンテナクエリ非対応ブラウザ用のフォールバック */
+  font-size: 5.6cqw;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: .01em;
+  white-space: nowrap;
+}
+.ba__label--before { left: 2.2%; }
+.ba__label--after  { left: 53%; }
+
 /* Before → After の矢印（3枚とも同じ大きさ・位置） */
 .ba__arrow {
   position: absolute;
@@ -1381,20 +1401,22 @@ button { font-family: inherit; }
   body { font-size: 14px; padding-bottom: 76px; }
   .section { padding: 54px 0; }
 
-  .header__inner { padding: 10px 0; align-items: center; }
+  /* 電話番号を画面の右端ぎりぎりまで寄せる */
+  .header__inner { width: min(100% - 16px, 1240px); padding: 10px 0; align-items: center; }
   .header__logo-img { height: 84px; margin: -15px 0 -15px -13px; }
-  .header__right { gap: 12px; padding-top: 0; }
+  .header__right { gap: 6px; padding-top: 0; }
   .header__tel-num { font-size: 17px; }
   .header__tel-time { font-size: 10px; }
-  .header__menu { width: 34px; height: 26px; gap: 6px; }
+  .header__menu { width: 30px; height: 26px; gap: 6px; margin-right: -2px; }
 
   .hero { padding-top: 66px; }
   .hero__inner { grid-template-columns: 1fr; padding: 14px 0 18px; }
   .hero__bottle { width: 48%; margin-left: 0; margin-right: auto; margin-top: -8px; }
-  .hero__bg { object-position: 51% center; }
+  /* 作業者の女性が画面の右寄りに来るように写真の位置を調整 */
+  .hero__bg { object-position: 48% center; filter: brightness(1.12) saturate(1.04); }
   .hero__media::after {
     background:
-      linear-gradient(180deg, rgba(30,31,34,.9) 0%, rgba(32,33,36,.55) 34%, rgba(26,27,30,.82) 100%);
+      linear-gradient(180deg, rgba(30,31,34,.72) 0%, rgba(32,33,36,.3) 34%, rgba(26,27,30,.6) 100%);
   }
   /* ボトル周りは暗くせず、影だけで浮かせる */
   .hero__bottle::before { background: none; }
