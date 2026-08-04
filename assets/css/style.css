@@ -291,7 +291,7 @@ button { font-family: inherit; }
   content: "";
   position: absolute;
   inset: -12% -18%;
-  background: radial-gradient(ellipse at 50% 45%, rgba(255,246,224,.22), rgba(255,246,224,0) 68%);
+  background: radial-gradient(ellipse at 50% 45%, rgba(255,247,228,.14), rgba(255,247,228,0) 62%);
   pointer-events: none;
 }
 .hero__bottle-img {
@@ -542,7 +542,24 @@ button { font-family: inherit; }
   font-size: 17px;
   font-weight: 700;
   letter-spacing: .08em;
-  text-shadow: 0 1px 6px rgba(0,0,0,.45);
+}
+/* ゴールドが流れる演出 */
+.gold-flow {
+  background-image: linear-gradient(100deg,
+    #cfa23f 0%, #cfa23f 12%, #ffeec2 24%, #fffaee 32%, #ffeec2 40%, #cfa23f 54%, #cfa23f 100%);
+  background-size: 260% 100%;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gold-flow 3.6s linear infinite;
+}
+@keyframes gold-flow {
+  from { background-position: 130% 0; }
+  to   { background-position: -70% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gold-flow { animation: none; background: none; color: #ffe9b8; }
 }
 
 .compare__vs { display: grid; place-items: center; }
@@ -1377,11 +1394,8 @@ button { font-family: inherit; }
     background:
       linear-gradient(180deg, rgba(30,31,34,.9) 0%, rgba(32,33,36,.55) 34%, rgba(26,27,30,.82) 100%);
   }
-  /* ボトルの背後を落として写真と分離させる */
-  .hero__bottle::before {
-    inset: -12% -26%;
-    background: radial-gradient(ellipse at 52% 55%, rgba(10,10,12,.88) 0%, rgba(10,10,12,.55) 48%, rgba(10,10,12,0) 74%);
-  }
+  /* ボトル周りは暗くせず、影だけで浮かせる */
+  .hero__bottle::before { background: none; }
   .brand { margin-bottom: 18px; }
   .hero__lead { font-size: 16px; margin-top: 14px; }
   .hero__badges { grid-template-columns: 1fr; margin-bottom: 32px; }
