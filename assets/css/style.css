@@ -545,10 +545,12 @@ button { font-family: inherit; }
 }
 /* ゴールドが流れる演出 */
 .gold-flow {
+  /* 一番暗い部分でも明るい金色を保ち、その上を白い光が流れる */
   background-image: linear-gradient(100deg,
-    #cfa23f 0%, #cfa23f 12%, #ffeec2 24%, #fffaee 32%, #ffeec2 40%, #cfa23f 54%, #cfa23f 100%);
+    #ffe3a8 0%, #ffe3a8 34%, #fff6df 44%, #ffffff 50%, #fff6df 56%, #ffe3a8 66%, #ffe3a8 100%);
   background-size: 260% 100%;
-  background-repeat: no-repeat;
+  /* repeat にしないと、光が外れた部分の文字が塗られず消えてしまう */
+  background-repeat: repeat-x;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
